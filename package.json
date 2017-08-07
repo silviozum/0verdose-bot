@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "chatbot facebook message",
   "main": "app.js",
+  "scripts" : {
+    "start" : "node server.js"
+  },
   "dependencies": {
     "messenger-bot": "^2.4.0"
   },
