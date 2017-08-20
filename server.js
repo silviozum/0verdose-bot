@@ -2,37 +2,24 @@ const express = require('express');
 var path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+var http = require('http').Server(app);
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+var io = require('socket.io')(http);
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 
 app.get('/', function(req, res){
     res.render('index.html');
 });
-
-/* For Facebook Validation */
-app.get('/webhook', (req, res) => {
-  if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'overcat') {
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    res.status(403).end();
-  }
-});
-
-/* Handling all messenges */
-// app.post('/webhook', (req, res) => {
-//   console.log(req.body);
-//   if (req.body.object === 'page') {
-//     req.body.entry.forEach((entry) => {
-//       entry.messaging.forEach((event) => {
-//         if (event.message && event.message.text) {
-//           sendMessage(event);
-//         }
-//       });
-//     });
-//     res.status(200).end();
-//   }
-// });
-
-const server = app.listen(process.env.PORT || 3000, () => {
-  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+  });
 });

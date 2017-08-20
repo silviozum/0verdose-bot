@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <script type="text/javascript" src="assets/lib/scripts.js" ></script>
 
 
 </head>
@@ -20,8 +19,38 @@
   <section>
     <h1>0verdose.ninja</h1>
     <span>Loading ... </span>
+    <button id="facebook" onclick="checkLoginState();">conecta ae viado</button>
+    <ul id="likes"></ul>
+
+      <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+
   </section>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+   var socket = io();
 
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '469897416724174',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
 
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script type="text/javascript" src="assets/js/scripts.js" ></script>
 </body>
 </html>

@@ -9,7 +9,8 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "messenger-bot": "^2.4.0"
+    "messenger-bot": "^2.4.0",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {},
   "author": "",
