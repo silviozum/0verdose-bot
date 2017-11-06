@@ -1,33 +1,35 @@
 <!DOCTYPE HTML>
-<!--
-    Concha na Rede by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
     <title>0verdose</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
-
-
-
 </head>
 <body>
-  <div></div>
-  <section>
-    <h1>0verdose.ninja</h1>
-    <span>Loading ... </span>
-    <button id="facebook" onclick="checkLoginState();">conecta ae viado</button>
-    <ul id="likes"></ul>
-
-      <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+  <section class="main">
+    <form action="/api/register" method="post">
+      <input type="text" name="user" placeholder="user">
+      <input type="text" name="email" placeholder="email">
+      <input type="text" name="password" placeholder="senha">
+      <button type="submit">Entrar </button>
     </form>
 
+    <!-- <button id="facebook" onclick="checkLoginState();">L .ogin</button> -->
+
+    <section class="content-chat">
+      <ul id="likes"></ul>
+      <div class="chat">
+        <ul id="messages"></ul>
+        <form action="" class="socket-chat">
+          <input id="m" autocomplete="off" placeholder="talk to me my friend?"/>
+          <button class="hvr-grow">Send</button>
+        </form>
+      </div>
+    </section>
   </section>
+
+  <div id="map"></div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
@@ -52,5 +54,6 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
   <script type="text/javascript" src="assets/js/scripts.js" ></script>
+
 </body>
 </html>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body,ul{
+  margin: 0;
+  padding: 0;
+}
 p,a,li{
   font-family: 'Ubuntu', sans-serif;
 }
@@ -7,102 +11,39 @@ li{
   list-style: none;
 }
 body{
-  background-color: #c0b5f7;
+
   overflow-x: hidden;
 font-family: 'Press Start 2P', cursive;
 }
-div {
-    width: 900px;
-    height: 972px;
-    background-image: url(../img/over.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    -webkit-animation: mymove; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
-    animation-duration: 0.8s;
+input,button{
+  border: none;
+  outline: none;
 }
-
-section{
-  position: absolute;
-  top: 0;
-  right: 100px;
-  font-size: 40px;
-  z-index: 9000;
+button,a{
+  cursor: pointer;
 }
-section{
-  animation: tada;
-  animation-duration: 2s;
-  position:absolute;
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 62px;
+  text-align: center;
 }
-#likes{
-  font-size: 12px
+.socket-chat input{
+  background-color: transparent;
+  height: 200px;
+  font-size: 62px;
+  width: 100%;
+  text-indent: 25px
 }
-#likes li{
-  display: inline-block;
+.socket-chat button{
+    visibility: hidden;
 }
-button#facebook  {
-   padding-right: 45px;
-   height: 35px;
-   background: none;
-   border: none;
-   display: block;
-   background-size: 35px 35px;
-   background-position: right center;
-   background-repeat: no-repeat;
-   border-radius: 4px;
-   color: white;
-   font-family:"Merriweather Sans", sans-serif;
-   font-size: 14px;
-   margin-bottom: 15px;
-   width: 205px;
-   border-bottom: 2px solid transparent;
-   border-left: 1px solid transparent;
-   border-right: 1px solid transparent;
-   box-shadow: 0 4px 2px -2px gray;
-   text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
-   border-color: #2d5073;
-   background-color: #3b5998;
-   background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
-   margin-top: 20px;
-   float: right;
+#messages li{
+  margin: 60px 0;
 }
-
-@keyframes mymove {
-  from {
-    opacity: 1;
-    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
-    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
-  }
-
-}
-
-
-
-
-@keyframes tada {
-  from {
-    opacity: 0;
-    transform: scale(0.1) rotate(30deg);
-    transform-origin: center bottom;
-  }
-
-  50% {
-    transform: rotate(-10deg);
-  }
-
-  70% {
-    transform: rotate(3deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.activebody{
+  background-color: 	#CD5C5C;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }

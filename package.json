@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "botmaster-socket.io": "^1.0.3",
     "express": "^4.15.4",
     "messenger-bot": "^2.4.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {},
